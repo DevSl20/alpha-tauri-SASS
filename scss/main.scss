@@ -1,14 +1,16 @@
+@use "variables" as v;
 @import url(reset);
 
-$color-red: rgb(255, 0, 0);
-$color-peach: rgba(255, 215, 185, 0, 91);
-$color-violet: rgba(223, 150, 247, 0, 8);
+//Mixins
+@mixin gradienta($deg: 100deg) {
+  background: linear-gradient($deg,
+      $color-peach,
+      $color-violet);
+}
 
 body {
   font-family: "Teachers", sans-serif;
-  background: linear-gradient(106.5deg,
-      $color-peach: rgba(255, 215, 185, 0, 91),
-      $color-violet: rgba(223, 150, 247, 0, 8));
+  @include gradienta();
 
   animation: {
     name: golgol;
@@ -26,26 +28,26 @@ body {
 @keyframes golgol {
   0% {
     background: linear-gradient(20deg,
-        $color-peach,
-        $color-violet);
+        v.$color-peach,
+        v.$color-violet);
   }
 
   25% {
     background: linear-gradient(80deg,
-        $color-peach,
-        $color-violet);
+        v.$color-peach,
+        v.$color-violet);
   }
 
   50% {
     background: linear-gradient(120deg,
-        $color-peach,
-        $color-violet);
+        v.$color-peach,
+        v.$color-violet);
   }
 
   100% {
     background: linear-gradient(160deg,
-        $color-peach,
-        $color-violet);
+        v.$color-peach,
+        v.$color-violet);
   }
 }
 
